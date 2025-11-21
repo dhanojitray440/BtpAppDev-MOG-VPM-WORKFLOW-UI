@@ -1,0 +1,135 @@
+_schema-version: "3.2"
+ID: MOG_VPM_FORM_UI
+version: 0.0.1
+modules:
+- name: MOG_VPM_FORM_UI-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: MOG_VPM_FORM_UI-destination-service
+    parameters:
+      content-target: true
+  - name: MOG_VPM_FORM_UI_html_repo_host
+    parameters:
+      service-key:
+        name: MOG_VPM_FORM_UI_html_repo_host-key
+  - name: uaa_MOG_VPM_FORM_UI
+    parameters:
+      service-key:
+        name: uaa_MOG_VPM_FORM_UI-key
+  parameters:
+    content:
+      subaccount:
+        destinations:
+        - Name: com_app_vpm_MOG_VPM_FORM_UI_html_repo_host
+          ServiceInstanceName: MOG_VPM_FORM_UI-html5-app-host-service
+          ServiceKeyName: MOG_VPM_FORM_UI_html_repo_host-key
+          sap.cloud.service: com.app.vpm
+        - Authentication: OAuth2UserTokenExchange
+          Name: com_app_vpm_uaa_MOG_VPM_FORM_UI
+          ServiceInstanceName: MOG_VPM_FORM_UI-xsuaa-service
+          ServiceKeyName: uaa_MOG_VPM_FORM_UI-key
+          sap.cloud.service: com.app.vpm
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: MOG_VPM_FORM_UI-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: MOG_VPM_FORM_UI_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - workflowuimodulemev.zip
+      name: workflowuimodulemev
+      target-path: resources/
+    - artifacts:
+      - project1.zip
+      name: project1
+      target-path: resources/
+    - artifacts:
+      - workflowuimodulemev2.zip
+      name: workflowuimodulemev2
+      target-path: resources/
+    - artifacts:
+      - workflowuimodulemev3.zip
+      name: workflowuimodulemev3
+      target-path: resources/
+- name: workflowuimodulemev
+  type: html5
+  path: workflow-ui-module-mev
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: project1
+  type: html5
+  path: project1
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: workflowuimodulemev2
+  type: html5
+  path: workflow-ui-module-mev2
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: workflowuimodulemev3
+  type: html5
+  path: workflow-ui-module-mev3
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: MOG_VPM_FORM_UI-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        subaccount:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: MOG_VPM_FORM_UI-destination-service
+    service-plan: lite
+- name: MOG_VPM_FORM_UI_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: MOG_VPM_FORM_UI-html5-app-host-service
+    service-plan: app-host
+- name: uaa_MOG_VPM_FORM_UI
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: MOG_VPM_FORM_UI-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true

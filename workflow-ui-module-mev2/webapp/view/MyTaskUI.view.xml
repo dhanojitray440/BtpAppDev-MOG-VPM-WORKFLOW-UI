@@ -1,0 +1,183 @@
+ 
+<mvc:View
+    controllerName="workflowuimodulemev2.controller.MyTaskUI"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <uxap:ObjectPageLayout
+        id="detailsnewidRootViewObjectCompletePage2"
+        enableLazyLoading="true"
+        showTitleInHeaderContent="true"
+        upperCaseAnchorBar="false"
+        >
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle id="detailsnewidRootViewObjectCompletePageDynamicHeaderTitle2"  > </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:sections>
+           
+            <uxap:ObjectPageSection
+                titleUppercase="false"
+                id="idRootViewNewWorkpermitdddSection2"
+                title="{i18n>personalInfo}">
+
+                <uxap:ObjectPageSubSection
+                    id="idRootViewNewWdddddorkpermitSubSection2">
+
+                        <f:SimpleForm
+                            id="visaForm"
+                            editable="true"
+                            layout="ColumnLayout"
+                            columnsL="3"
+                            columnsXL="3"
+                            columnsM="2"
+                            labelSpanL="4"
+                            >
+
+<!-- <Title id="_IDGenTitle" text="Personal Information" /> -->
+
+        <Label id="_IDGenLabel1" text="Applicant Name" />
+        <Input id="_IDGenInput" value="" />
+
+        <Label id="_IDGenLabel2" text="Surname" />
+        <Input id="_IDGenInput1" value="" />
+
+        <Label id="_IDGenLabel3" text="Father’s Name" />
+        <Input id="_IDGenInput2" value="" />
+
+        <Label id="_IDGenLabel4" text="Nationality" />
+        <Input id="_IDGenInput9"/>
+        
+
+        <Label id="_IDGenLabel14" text="Gender" />
+        <Select id="_IDGenSelect1" selectedKey="">
+            <items>
+                <core:Item id="_IDGenItem3" key="M" text="Male"/>
+                <core:Item id="_IDGenItem4" key="F" text="Female"/>
+            </items>
+        </Select>
+
+        <Label id="_IDGenLabel31" text="Religion" />
+        <Select id="_IDGenSelect2" selectedKey="">
+            <items>
+                <core:Item id="_IDGenItem5" key="muslim" text="Muslim"/>
+                <core:Item id="_IDGenItem6" key="christian" text="Christian"/>
+                <core:Item id="_IDGenItem13" key="hindu" text="Hindu"/>
+                <core:Item id="_IDGenItem14" key="other" text="Other"/>
+            </items>
+        </Select>
+
+        <Label id="_IDGenLabel32" text="Marital Status" />
+        <Select id="_IDGenSelect3" selectedKey="{/maritalStatus}">
+            <items>
+                <core:Item id="_IDGenItem15" key="single" text="Single"/>
+                <core:Item id="_IDGenItem16" key="married" text="Married"/>
+                <core:Item id="_IDGenItem17" key="divorced" text="Divorced"/>
+            </items>
+        </Select>
+
+       
+                            
+
+                        </f:SimpleForm>
+                    
+
+
+
+                </uxap:ObjectPageSubSection>
+            </uxap:ObjectPageSection>
+
+
+        <uxap:ObjectPageSection
+                titleUppercase="false"
+                id="idRootVikpermitdddSectio3"
+                title="{i18n>visInfo}">
+
+                <uxap:ObjectPageSubSection
+                    id="idRootVieSddection2">
+             <f:SimpleForm
+                id="visaFoffrm5"
+                editable="true"
+                layout="ColumnLayout"
+                columnsL="3"
+                columnsXL="3"
+                columnsM="2"
+                labelSpanL="4"
+                >
+                            <!-- ========================================= -->
+        <!-- MISSION DETAILS                           -->
+        <!-- ========================================= -->
+        <!-- <Title id="_IDGenTitle1" text="Mission Details" /> -->
+
+        <Label id="_IDGenLabel33" text="Profession" />
+        <Input id="_IDGenInput3" value="" />
+
+        <Label id="_IDGenLabel34" text="Purpose of Entry" />
+        <TextArea id="_IDGenTextArea" value="" rows="2" />
+
+        <Label id="_IDGenLabel35" text="Duration of Mission" />
+        <Input id="_IDGenInput4" value="" type="Number" />
+
+        <Label id="_IDGenLabel36" text="Place for Mission" />
+        <Input id="_IDGenInput5" value="" />
+
+        <Label id="_IDGenLabel37" text="Offer / Contract" />
+        <Input id="_IDGenInput6" value="" />
+
+        <Label id="_IDGenLabel38" text="Attachments Required" />
+        <Input id="deb"></Input>
+
+        <!-- ========================================= -->
+        <!-- ENTRY HISTORY                             -->
+        <!-- ========================================= -->
+        <!-- <Title id="_IDGenTitle2" text="Entry History" /> -->
+
+        <Label id="_IDGenLabel39" text="Has entered Libya before?" />
+        <Select id="_IDGenSelect4" selectedKey="">
+            <items>
+                <core:Item id="_IDGenItem18" key="yes" text="Yes"/>
+                <core:Item id="_IDGenItem19" key="no" text="No"/>
+            </items>
+        </Select>
+
+        <Label id="_IDGenLabel40" text="Last date of entry (if yes)" />
+        <DatePicker id="_IDGenDatePicker" value="" />
+
+        <!-- ========================================= -->
+        <!-- PASSPORT INFORMATION                      -->
+        <!-- ========================================= -->
+        <!-- <Title id="_IDGenTitle3" text="Passport Information" /> -->
+
+        <Label id="_IDGenLabel41" text="Passport Number Issue Place" />
+        <Input id="_IDGenInput7" value="" />
+
+        <Label id="_IDGenLabel42" text="Passport Expiry Date" />
+        <DatePicker id="_IDGenDatePicker1" value="" />
+
+        <Label id="_IDGenLabel43" text="Work Sponsor Name" />
+        <Input id="_IDGenInput8" value="" />
+                            
+
+
+                          
+                            
+
+                </f:SimpleForm>
+                    
+
+
+
+                </uxap:ObjectPageSubSection>
+            </uxap:ObjectPageSection>
+
+
+
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+
+
+</mvc:View>

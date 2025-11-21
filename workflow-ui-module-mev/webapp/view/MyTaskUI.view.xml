@@ -1,0 +1,283 @@
+<mvc:View  xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+  
+   
+    <uxap:ObjectPageLayout
+        id="detailsnewidRootVitgewObjectCompletePage2"
+        enableLazyLoading="true"
+        showTitleInHeaderContent="true"
+        upperCaseAnchorBar="false"
+        >
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle id="detailsnewidRootViewObjectCompletePageDynamicHeaderTitle2"  > </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:sections>
+           
+            <uxap:ObjectPageSection
+                titleUppercase="false"
+                id="idRootViewNewWorkpermitdddSection2"
+                title="{i18n>personalInfo}">
+
+                <uxap:ObjectPageSubSection
+                    id="idRootViewNewWdddddorkpermitSubSection2">
+
+                        <f:SimpleForm
+                            id="visaForm"
+                            editable="true"
+                            layout="ColumnLayout"
+                            columnsL="3"
+                            columnsXL="3"
+                            columnsM="2"
+                            labelSpanL="4"
+                            >
+
+
+                            <Label id="_IDGenLabel" text="Name"/>
+                            <Input id="name"/>
+
+                            <Label id="_IDGenLabel1" text="Father’s Name"/>
+                            <Input id="fatherName"/>
+
+                            <Label id="_IDGenLabel2" text="Surname"/>
+                            <Input id="surname"/>
+
+                            <Label id="_IDGenLabel3" text="Date of Birth"/>
+                            <DatePicker id="dob"/>
+
+                            <Label id="_IDGenLabel4" text="Nationality"/>
+                            <Input id="nationality"/>
+                            <!-- <Select id="nationality">
+                                <core:Item id="_IDGenItem" key="LY" text="Libya"/>
+                                <core:Item id="_IDGenItem1" key="EG" text="Egypt"/>
+                                <core:Item id="_IDGenItem2" key="TN" text="Tunisia"/>
+                                <core:Item id="_IDGenItem3" key="TR" text="Turkey"/>
+                               
+                            </Select> -->
+
+                            <Label id="_IDGenLabel14" text="Religion"/>
+                            <Select id="religion">
+                                <core:Item id="_IDGenItem4" key="M" text="Muslim"/>
+                                <core:Item id="_IDGenItem5" key="C" text="Christian"/>
+                                <core:Item id="_IDGenItem6" key="O" text="Other"/>
+                            </Select>
+
+                            
+
+                        </f:SimpleForm>
+                    
+
+
+
+                </uxap:ObjectPageSubSection>
+            </uxap:ObjectPageSection>
+
+
+
+
+
+
+
+
+
+        <uxap:ObjectPageSection
+                titleUppercase="false"
+                id="idRootViewNewWorkpermitdddSection3"
+                title="{i18n>educationDetails}">
+
+                <uxap:ObjectPageSubSection
+                    id="idRootViewNewWdddddorkpermitSubSection3">
+
+
+    <!-- <ScrollContainer id="_IDGenScrollContainer" vertical="true" height="100%"> -->
+                        <f:SimpleForm
+                            id="visaForm2"
+                            editable="true"
+                            layout="ColumnLayout"
+                            columnsL="3"
+                            columnsXL="3"
+                            columnsM="2"
+                            labelSpanL="4"
+                            >
+
+
+                           
+
+                            <Label id="_IDGenLabel5" text="Qualification"/>
+                            <Input id="qualification"/>
+
+                            <Label id="_IDGenLabel6" text="Specialization"/>
+                            <Input id="specialization"/>
+
+                            <Label id="_IDGenLabel7" text="Date of Qualification"/>
+                            <DatePicker id="dateQualification"/>
+
+                        
+
+                            
+
+                        </f:SimpleForm>
+                    
+
+
+
+                </uxap:ObjectPageSubSection>
+            </uxap:ObjectPageSection>
+
+
+
+
+
+
+
+
+            <uxap:ObjectPageSection
+                titleUppercase="false"
+                id="idRootViewNewWorkpermitdddSectio3"
+                title="{i18n>empDet}">
+
+                <uxap:ObjectPageSubSection
+                    id="idRootVieSection2">
+
+                        <f:SimpleForm
+                            id="visaForm3"
+                            editable="true"
+                            layout="ColumnLayout"
+                            columnsL="3"
+                            columnsXL="3"
+                            columnsM="2"
+                            labelSpanL="4"
+                            >
+
+                            <Label id="_IDGenLabel8" text="Employer"/>
+                            <Input id="employer"/>
+
+                            <Label id="_IDGenLabel9" text="Date of Appointment"/>
+                            <DatePicker id="dateAppointment"/>
+
+                            <Label id="_IDGenLabel10" text="Job Title"/>
+                            <Input id="jobTitle"/>
+
+                            <Label id="_IDGenLabel11" text="Place of Work"/>
+                            <Input id="placeOfWork"/>
+
+                            <Label id="_IDGenLabel12" text="Experience Duration"/>
+                            <Input id="experienceDuration" type="Number"/>
+
+                            <Label id="_IDGenLabel13" text="Previous Employers"/>
+                            <Input id="previousEmployers"/>
+
+                            
+
+                        
+
+
+                        </f:SimpleForm>
+                    
+
+
+
+                </uxap:ObjectPageSubSection>
+            </uxap:ObjectPageSection>
+
+
+        <uxap:ObjectPageSection
+                titleUppercase="false"
+                id="idRootVikpermitdddSectio3"
+                title="{i18n>visInfo}">
+
+                <uxap:ObjectPageSubSection
+                    id="idRootVieSddection2">
+             <f:SimpleForm
+                id="visaFoffrm5"
+                editable="true"
+                layout="ColumnLayout"
+                columnsL="3"
+                columnsXL="3"
+                columnsM="2"
+                labelSpanL="4"
+                >
+                            <Label id="_IDGenLabel15" text="Passport Number"/>
+                            <Input id="passportNumber"/>
+
+                            <Label id="_IDGenLabel16" text="Passport Issue Place"/>
+                            <Input id="passportIssuePlace"/>
+
+                            <Label id="_IDGenLabel17" text="Passport Issue Date"/>
+                            <DatePicker id="passportIssueDate"/>
+
+                            <Label id="_IDGenLabel18" text="Passport Expiry Date"/>
+                            <DatePicker id="passportExpiryDate"/>
+
+                        
+
+                            <Label id="_IDGenLabel19" text="Required Visa Type"/>
+                            <Input id="visaType"/>
+
+                            <Label id="_IDGenLabel20" text="Purpose of Mission"/>
+                            <Input id="purposeMission"/>
+
+                            <Label id="_IDGenLabel21" text="Duration of Mission"/>
+                            <Input id="durationMission"/>
+
+                            <Label id="_IDGenLabel22" text="Has entered Libya before?"/>
+                            <Select id="enteredBefore">
+                                <core:Item id="_IDGenItem7" key="Y" text="Yes"/>
+                                <core:Item id="_IDGenItem8" key="N" text="No"/>
+                            </Select>
+
+                            <Label id="_IDGenLabel23" text="Date of Entry"/>
+                            <DatePicker id="dateEntry"/>
+
+                            <Label id="_IDGenLabel24" text="Mission Address in Libya"/>
+                            <Input id="missionAddressLibya"/>
+
+                            <Label id="_IDGenLabel25" text="Number of prior missions"/>
+                            <Input id="numPriorMissions" type="Number"/>
+
+                            <Label id="_IDGenLabel26" text="Duration of each prior mission"/>
+                            <Input id="durationEachMission"/>
+
+                            <Label id="_IDGenLabel27" text="Has he completed all obligations?"/>
+                            <Select id="completedObligations">
+                                <core:Item id="_IDGenItem9" key="Y" text="Yes"/>
+                                <core:Item id="_IDGenItem10" key="N" text="No"/>
+                            </Select>
+
+                            <Label id="_IDGenLabel28" text="Previous work sponsor(s)"/>
+                            <Input id="previousSponsors"/>
+
+                            <Label id="_IDGenLabel29" text="Ever held work permit in Libya?"/>
+                            <Select id="workPermitBefore">
+                                <core:Item id="_IDGenItem11" key="Y" text="Yes"/>
+                                <core:Item id="_IDGenItem12" key="N" text="No"/>
+                            </Select>
+
+                            <Label id="_IDGenLabel30" text="Visa duration"/>
+                            <Input id="visaDuration"/>
+
+                            
+
+
+                          
+                            
+
+                </f:SimpleForm>
+                    
+
+
+
+                </uxap:ObjectPageSubSection>
+            </uxap:ObjectPageSection>
+
+
+
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+
+</mvc:View>

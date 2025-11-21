@@ -1,0 +1,16 @@
+/*global QUnit*/
+
+sap.ui.define([
+	"workflow-ui-module-mev2/controller/MyTaskUI.controller"
+], function (Controller) {
+	"use strict";
+
+	QUnit.module("MyTaskUI Controller");
+
+	QUnit.test("I should test the MyTaskUI controller", function (assert) {
+		var oAppController = new Controller();
+		oAppController.onInit();
+		assert.ok(oAppController);
+	});
+
+});
