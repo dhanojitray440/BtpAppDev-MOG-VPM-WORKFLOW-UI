@@ -1,0 +1,145 @@
+<mvc:View
+   controllerName="visaextension.visaExtensionForm.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+
+    <uxap:ObjectPageLayout
+        id="detailsnewidRootViewObjectCompletePage2"
+        enableLazyLoading="true"
+        showTitleInHeaderContent="true"
+        upperCaseAnchorBar="false"
+        >
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle id="detailsnewidRootViewObjectCompletePageDynamicHeaderTitle2"  > </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:sections>
+           
+            <uxap:ObjectPageSection
+                titleUppercase="false"
+                id="idRootViewNewWorkpermitdddSection2"
+                title="{i18n>personalInfo}">
+
+                <uxap:ObjectPageSubSection
+                    id="idRootViewNewWdddddorkpermitSubSection2">
+
+                        <f:SimpleForm
+                            id="visaForm"
+                            editable="true"
+                            layout="ColumnLayout"
+                            columnsL="3"
+                            columnsXL="3"
+                            columnsM="2"
+                            labelSpanL="4"
+                            >
+
+                        <Label id="_IDGenLabel" text="{i18n>applicantName}" />
+                        <Input id="_IDGenInput1"  />
+
+                        <Label id="_IDGenLabel1" text="{i18n>surName}" />
+                        <Input id="_IDGenInput2" />
+
+                        <Label id="_IDGenLabel2" text="{i18n>fatherName}" />
+                        <Input id="_IDGenInput9"  />
+
+                        <Label id="_IDGenLabel3" text="{i18n>nationality}" />
+                         <Input id="_IDGenInput99"  />
+                        <!-- <Select id="_IDGenSelect" selectedKey="{/nationality}">
+                            <items>
+                                <core:Item id="_IDGenItem" key="LY" text="Libyan"/>
+                                <core:Item id="_IDGenItem1" key="IN" text="Indian"/>
+                                <core:Item id="_IDGenItem2" key="EG" text="Egyptian"/>
+                                <core:Item id="_IDGenItem3" key="PK" text="Pakistani"/>
+                            </items>
+                        </Select> -->
+
+                            
+
+                        </f:SimpleForm>
+                    
+
+
+
+                </uxap:ObjectPageSubSection>
+            </uxap:ObjectPageSection>
+
+
+        <uxap:ObjectPageSection
+                titleUppercase="false"
+                id="idRootVikpermitdddSectio3"
+                title="{i18n>visInfo}">
+
+                <uxap:ObjectPageSubSection
+                    id="idRootVieSddection2">
+             <f:SimpleForm
+                id="visaFoffrm5"
+                editable="true"
+                layout="ColumnLayout"
+                columnsL="3"
+                columnsXL="3"
+                columnsM="2"
+                labelSpanL="4"
+                >
+               <Label id="_IDGenLabel4" text="{i18n>visaNumber}" />
+                <Input id="_IDGenInput"  />
+
+                <Label id="_IDGenLabel5" text="{i18n>placeofEntry}" />
+                <Input id="_IDGenInput3"  />
+
+                <Label id="_IDGenLabel6" text="{i18n>purposeofEntry}" />
+                <TextArea id="_IDGenTextArea"  rows="2" />
+
+                <Label id="_IDGenLabel7" text="{i18n>durationRequested}" />
+                <Input id="_IDGenInput4"  type="Number" />
+
+                <Label id="_IDGenLabel8" text="Applicant Address in Libya" />
+                <Input id="_IDGenInput5" />
+
+                <!-- ================================ -->
+                <!-- PASSPORT INFORMATION            -->
+                <!-- ================================ -->
+      
+
+                <Label id="_IDGenLabel9" text="{i18n>passportNumber}" />
+                <Input id="_IDGenInput6"  />
+
+                <Label id="_IDGenLabel10" text="{i18n>passportIssuePlace}" />
+                <Input id="_IDGenInput7"  />
+
+                <Label id="_IDGenLabel11" text="{i18n>passportExpiryDate}" />
+                <DatePicker id="_IDGenDatePicker1" />
+
+                <!-- ================================ -->
+                <!-- APPLICATION DETAILS             -->
+             
+
+                <Label id="_IDGenLabel12" text="{i18n>dateofApplication}" />
+                <DatePicker id="_IDGenDatePicker2"  />
+
+
+                            
+
+
+                          
+                            
+
+                </f:SimpleForm>
+                    
+
+
+
+                </uxap:ObjectPageSubSection>
+            </uxap:ObjectPageSection>
+
+
+
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+
+</mvc:View>
+

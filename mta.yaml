@@ -1,0 +1,92 @@
+_schema-version: "3.2"
+ID: visa-extension-application
+version: 0.0.1
+modules:
+- name: visa-extension-application-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: visa-extension-application-destination-service
+    parameters:
+      content-target: true
+  - name: visa-extension-application_html_repo_host
+    parameters:
+      service-key:
+        name: visa-extension-application_html_repo_host-key
+  - name: uaa_visa-extension-application
+    parameters:
+      service-key:
+        name: uaa_visa-extension-application-key
+  parameters:
+    content:
+      subaccount:
+        destinations:
+        - Name: app_visa_extension_visa_extension_application_html_repo_host
+          ServiceInstanceName: visa-extension-application-html5-app-host-service
+          ServiceKeyName: visa-extension-application_html_repo_host-key
+          sap.cloud.service: app.visa.extension
+        - Authentication: OAuth2UserTokenExchange
+          Name: app_visa_extension_uaa_visa_extension_application
+          ServiceInstanceName: visa-extension-application-xsuaa-service
+          ServiceKeyName: uaa_visa-extension-application-key
+          sap.cloud.service: app.visa.extension
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: visa-extension-application-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: visa-extension-application_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - visaextensionvisaExtensionForm.zip
+      name: visaextensionvisaExtensionForm
+      target-path: resources/
+- name: visaextensionvisaExtensionForm
+  type: html5
+  path: visaExtensionForm
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: visa-extension-application-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        subaccount:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: visa-extension-application-destination-service
+    service-plan: lite
+- name: visa-extension-application_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: visa-extension-application-html5-app-host-service
+    service-plan: app-host
+- name: uaa_visa-extension-application
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: visa-extension-application-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo
